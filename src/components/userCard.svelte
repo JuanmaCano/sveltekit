@@ -5,7 +5,7 @@
 	const circle = 'rounded-full border border-gray-100 shadow-sm';
 </script>
 
-<a class={card} href={`/users/${user.id}`}>
+<a class={card} href={`/user/${user.id}`}>
 	<img src={user.avatar} alt={user.name} class={circle} />
 	<h2>{user.name}</h2>
 </a>
