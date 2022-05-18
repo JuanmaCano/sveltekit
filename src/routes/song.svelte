@@ -1,9 +1,28 @@
 <script>
+	import { goto } from '$app/navigation';
 	let artist = '';
 	let song = '';
+
+	let message = 'All fields are mandatory';
+	let show = false;
+
+	function submit() {
+		if (artist === '' || song === '') {
+			show = true;
+		} else {
+			show = false;
+			goto(`/lyrics/${artist}-${song}`);
+		}
+	}
 </script>
 
 <h1 class="text-3xl">Search lyrics</h1>
+
+{#if show}
+	<h1 class="text-2xl text-red-500">
+		{message}
+	</h1>
+{/if}
 
 <input
 	type="text"
@@ -22,4 +41,6 @@
 />
 <div class="mt-5" />
 
-<a href={`/lyrics/${artist}-${song}`} class="bg-blue-500 text-white bold py-2 px-5"> Search </a>
+<button on:click={submit} class="rounded-md  bg-blue-800 text-white py-2 px-5 bold">
+	Search
+</button>

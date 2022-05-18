@@ -27,6 +27,10 @@
 		{song}
 	</h3>
 	<p>
-		{lyrics.lyrics}
+		{#if lyrics.error}
+			<p class="text-red-800">Not found !!</p>
+		{:else}
+			{lyrics.lyrics}
+		{/if}
 	</p>
 </center>
