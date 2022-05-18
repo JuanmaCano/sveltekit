@@ -3,5 +3,4 @@
 </script>
 
 <Nav />
-
-<h2>Home</h2>
+<h1>Página de acerca de</h1>
