@@ -1,7 +1,4 @@
-<script>
-	import Nav from '../components/nav.svelte';
-</script>
-
-<Nav />
-
-<h2>Home</h2>
+<center class="mt-9">
+	<img src="netflix.svg" alt="" />
+	<h1 class="bold text-5xl">USERS API</h1>
+</center>

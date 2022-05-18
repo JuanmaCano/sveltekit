@@ -1,6 +1,1 @@
-<script>
-	import Nav from '../components/nav.svelte';
-</script>
-
-<Nav />
-<h1>Página de acerca de</h1>
+<h1 class="my-9 py-9 text-5xl">Página de acerca de</h1>
