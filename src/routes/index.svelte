@@ -1,8 +1,15 @@
+<script>
+	import UserCard from './../components/userCard.svelte';
+	import { users } from '../stores/userStore';
+	import userCard from '../components/userCard.svelte';
+</script>
+
 <svelte:head>
 	<title>Introducción a SvelteKit</title>
 </svelte:head>
 
-<center class="mt-9">
-	<img src="netflix.svg" alt="" />
-	<h1 class="bold text-5xl">USERS API</h1>
-</center>
+<div class="mt-16 py-5 grid gap-5 md:grid-cols-3">
+	{#each $users as user}
+		<UserCard {user} />
+	{/each}
+</div>
