@@ -3,6 +3,12 @@
 </script>
 
 <Nav />
-<div class="p-2 max-w-6xl mx-auto">
+<div class="container p-2 mx-auto">
 	<slot />
 </div>
+
+<style>
+	.container {
+		padding-top: 5rem;
+	}
+</style>

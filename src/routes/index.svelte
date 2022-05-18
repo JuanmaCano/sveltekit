@@ -1,15 +1,31 @@
 <script>
 	import UserCard from './../components/userCard.svelte';
 	import { users } from '../stores/userStore';
-	import userCard from '../components/userCard.svelte';
+	let search = '';
+	let filtered = [];
+
+	$: {
+		if (search) {
+			filtered = $users.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()));
+		} else {
+			filtered = [...$users];
+		}
+	}
 </script>
 
 <svelte:head>
-	<title>Introducción a SvelteKit</title>
+	<title>Introduction to SvelteKit</title>
 </svelte:head>
 
-<div class="mt-16 py-5 grid gap-5 md:grid-cols-3">
-	{#each $users as user}
+<input
+	type="text"
+	placeholder="Search"
+	bind:value={search}
+	class="w-full rounded-md text-lg p-4 border-2"
+/>
+
+<div class="py-5 grid gap-5 md:grid-cols-3">
+	{#each filtered as user}
 		<UserCard {user} />
 	{/each}
 </div>
